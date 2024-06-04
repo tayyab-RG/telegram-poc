@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginTelegram from './telegramLogin';
 
 function App() {
   return (
@@ -18,6 +19,16 @@ function App() {
           Learn React
         </a>
       </header>
+      <LoginTelegram
+        lang="en"
+        cornerRadius={5} // 0 - 20
+        buttonSize="large" // "large" | "medium" | "small"
+        botUsername="RGSideQuestBot"
+        onAuthCallback={(data) => {
+          console.log(data);
+          // call your backend here to validate the data and sign in the user
+        }}
+      />
     </div>
   );
 }
